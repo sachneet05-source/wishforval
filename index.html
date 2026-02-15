@@ -33,6 +33,7 @@ body {
     border: none;
     background: red;
     color: white;
+    cursor: pointer;
 }
 
 /* GLOW NAME */
@@ -69,6 +70,8 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: opacity 2s;
+    text-align: center;
+    padding: 20px;
 }
 </style>
 </head>
@@ -80,52 +83,4 @@ body {
     <button class="start-btn" id="startBtn">START</button>
 </div>
 
-<h1 class="title">Happy Valentine's Day Naman ❤️</h1>
-
-<p>Your GLI is powerful…<br>But my love for you? Turbocharged 😌🔥</p>
-
-<button onclick="showCinematic()">YES ❤️</button>
-
-<div id="finalScreen">
-    Next stop:<br>Forever. With you. ❤️
-</div>
-
-<audio id="bgMusic" loop playsinline>
-<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9e66d6a4f3.mp3" type="audio/mpeg">
-</audio>
-
-<audio id="engineSound" playsinline>
-<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_3d3e6c26f3.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-const startBtn = document.getElementById("startBtn");
-const startScreen = document.getElementById("startScreen");
-const bgMusic = document.getElementById("bgMusic");
-const engine = document.getElementById("engineSound");
-
-startBtn.addEventListener("click", function() {
-    bgMusic.play().then(() => {
-        startScreen.style.display = "none";
-    }).catch(() => {
-        alert("Turn off silent mode 🔊");
-    });
-});
-
-function showCinematic() {
-    engine.play();
-    document.body.classList.add("shake");
-
-    setTimeout(() => {
-        document.body.classList.remove("shake");
-        bgMusic.volume = 0.3;
-    }, 500);
-
-    setTimeout(() => {
-        document.getElementById("finalScreen").style.opacity = "1";
-    }, 2000);
-}
-</script>
-
-</body>
-</html>
+<h1 class="title">Happy Valenti
