@@ -12,34 +12,12 @@ body {
     background: linear-gradient(135deg, black, #990000);
     color: white;
     text-align: center;
-    overflow: hidden;
-}
-
-/* START SCREEN */
-#startScreen {
-    position: fixed;
-    inset: 0;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 999;
-}
-
-.start-btn {
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 30px;
-    border: none;
-    background: red;
-    color: white;
-    cursor: pointer;
+    min-height: 100vh;
 }
 
 /* GLOW NAME */
 .title {
-    margin-top: 30px;
+    margin-top: 60px;
     animation: glow 2s infinite alternate;
 }
 
@@ -57,6 +35,18 @@ body {
 
 .shake {
     animation: shake 0.4s;
+}
+
+/* BUTTON STYLE */
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 25px;
+    border: none;
+    background: white;
+    color: #990000;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
 /* FINAL SCREEN */
@@ -79,11 +69,6 @@ body {
 
 <body>
 
-<div id="startScreen">
-    <h2>Tap to Start the Engine 😏🔥</h2>
-    <button class="start-btn" id="startBtn">START</button>
-</div>
-
 <h1 class="title">Happy Valentine's Day Naman ❤️</h1>
 
 <p>Your GLI is powerful…<br>But my love for you? Turbocharged 😌🔥</p>
@@ -93,3 +78,20 @@ body {
 <div id="finalScreen">
     Next stop:<br>Forever. With you. ❤️
 </div>
+
+<script>
+function showCinematic() {
+    document.body.classList.add("shake");
+
+    setTimeout(() => {
+        document.body.classList.remove("shake");
+    }, 500);
+
+    setTimeout(() => {
+        document.getElementById("finalScreen").style.opacity = "1";
+    }, 2000);
+}
+</script>
+
+</body>
+</html>
