@@ -4,17 +4,134 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Naman ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ffe6eb, #ffd6e0);
+    text-align: center;
+    padding-top: 100px;
+    overflow: hidden;
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    color: #c9184a;
+}
+
+.main-text {
+    font-size: 22px;
+}
+
+.highlight {
+    font-size: 26px;
+    color: #c9184a;
+    margin-top: 15px;
+}
+
+.extra {
+    font-size: 18px;
+    color: #444;
+    margin-top: 15px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    background: #c9184a;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+#surpriseScreen {
+    position: fixed;
+    inset: 0;
+    background: #c9184a;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 28px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1.5s;
+    padding: 20px;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -20px;
+    font-size: 20px;
+    animation: floatUp 6s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+</style>
 </head>
 
-<body style="margin:0; font-family:Arial; background:#ffe6eb; text-align:center; padding-top:100px;">
+<body>
 
-<h1 style="color:#c9184a;">Happy Valentine's Day Naman ❤️</h1>
+<h1>Happy Valentine's Day Naman ❤️</h1>
 
-<p style="font-size:22px;">Your GLI may be fast…</p>
+<p class="main-text">Your GLI may be fast…</p>
 
-<p style="font-size:24px; color:#c9184a;">
+<p class="highlight">
 But my heart races faster for you 🚗💓
 </p>
+
+<p class="extra">
+And I never want to hit the brakes with us 💞
+</p>
+
+<button onclick="showSurprise()">I Choose You 💘</button>
+
+<div id="surpriseScreen">
+    <div>Surprise 🥹💖</div>
+    <div style="margin-top:20px; font-size:22px;">
+        I’d choose you in every lifetime.<br>
+        Every universe.<br>
+        Every road. 🚗💞
+    </div>
+</div>
+
+<script>
+function showSurprise() {
+    document.getElementById("surpriseScreen").style.opacity = "1";
+    document.getElementById("surpriseScreen").style.pointerEvents = "auto";
+}
+
+// Create floating hearts
+for (let i = 0; i < 15; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+    heart.style.fontSize = (15 + Math.random() * 15) + "px";
+    document.body.appendChild(heart);
+}
+</script>
 
 </body>
 </html>
