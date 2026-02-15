@@ -1,3 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naman ❤️ Turbo Love</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, black, #990000);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* START SCREEN */
+#startScreen {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.start-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+}
+
+/* GLOW NAME */
+.title {
+    margin-top: 30px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px red; }
+    to { text-shadow: 0 0 35px #ff0033; }
+}
+
+/* SHAKE */
+@keyframes shake {
+    0% { transform: translate(2px, 2px); }
+    50% { transform: translate(-2px, -2px); }
+    100% { transform: translate(0,0); }
+}
+
+.shake {
+    animation: shake 0.4s;
+}
+
+/* FINAL SCREEN */
+#finalScreen {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 2s;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+
 <body>
-<h1 style="color:white">TEST WORKING</h1>
+
+<div id="startScreen">
+    <h2>Tap to Start the Engine 😏🔥</h2>
+    <button class="start-btn" id="startBtn">START</button>
+</div>
+
+<h1 class="title">Happy Valentine's Day Naman ❤️</h1>
+
+<p>Your GLI is powerful…<br>But my love for you? Turbocharged 😌🔥</p>
+
+<button onclick="showCinematic()">YES ❤️</button>
+
+<div id="finalScreen">
+    Next stop:<br>Forever. With you. ❤️
+</div>
+
+<audio id="bgMusic" loop playsinline>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9e66d6a4f3.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="engineSound" playsinline>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_3d3e6c26f3.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const startBtn = document.getElementById("startBtn");
+const startScreen = document.getElementById("startScreen");
+const bgMusic = document.getElementById("bgMusic");
+const engine = document.getElementById("engineSound");
+
+// ✅ FIXED START BUTTON (no more stuck screen)
+startBtn.addEventListener("click", function() {
+    startScreen.style.display = "none"; // Hide immediately
+    bgMusic.play().catch(() => {
+        console.log("Music autoplay blocked");
+    });
+});
+
+function showCinematic() {
+    engine.play().catch(() => {});
+    document.body.classList.add("shake");
+
+    setTimeout(() => {
+        document.body.classList.remove("shake");
+        bgMusic.volume = 0.3;
+    }, 500);
+
+    setTimeout(() => {
+        document.getElementById("finalScreen").style.opacity = "1";
+    }, 2000);
+}
+</script>
+
 </body>
+</html>
