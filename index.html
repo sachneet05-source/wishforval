@@ -3,95 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Naman Turbo Love</title>
+<title>For Naman ❤️</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, black, #990000);
-    color: white;
+    background: #ffe6eb;
     text-align: center;
-    min-height: 100vh;
+    padding: 60px 20px;
 }
 
-/* GLOW NAME */
-.title {
-    margin-top: 60px;
-    animation: glow 2s infinite alternate;
+h1 {
+    color: #c9184a;
 }
 
-@keyframes glow {
-    from { text-shadow: 0 0 10px red; }
-    to { text-shadow: 0 0 35px #ff0033; }
-}
-
-/* SHAKE */
-@keyframes shake {
-    0% { transform: translate(2px, 2px); }
-    50% { transform: translate(-2px, -2px); }
-    100% { transform: translate(0,0); }
-}
-
-.shake {
-    animation: shake 0.4s;
-}
-
-/* BUTTON STYLE */
-button {
-    padding: 12px 25px;
-    font-size: 18px;
-    border-radius: 25px;
-    border: none;
-    background: white;
-    color: #990000;
-    cursor: pointer;
+p {
+    font-size: 20px;
+    color: #333;
     margin-top: 20px;
 }
-
-/* FINAL SCREEN */
-#finalScreen {
-    position: fixed;
-    inset: 0;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 32px;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 2s;
-    text-align: center;
-    padding: 20px;
-}
-</style>
-</head>
-
-<body>
-
-<h1 class="title">Happy Valentine's Day Naman ❤️</h1>
-
-<p>Your GLI is powerful…<br>But my love for you? Turbocharged 😌🔥</p>
-
-<button onclick="showCinematic()">YES ❤️</button>
-
-<div id="finalScreen">
-    Next stop:<br>Forever. With you. ❤️
-</div>
-
-<script>
-function showCinematic() {
-    document.body.classList.add("shake");
-
-    setTimeout(() => {
-        document.body.classList.remove("shake");
-    }, 500);
-
-    setTimeout(() => {
-        document.getElementById("finalScreen").style.opacity = "1";
-    }, 2000);
-}
-</script>
-
-</body>
-</html>
